@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Page</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .welcome-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #3e0fd7;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <h1>歡迎</h1>
+    <p>點擊start可以到留言板</p>
+    <a href="{% url 'all_talks' %}" class="button">start</a>
+    <p>點擊login登入</p>
+    <a href="{% url 'login' %}" class="button">login</a>
+  </div>
+</body>
+</html>

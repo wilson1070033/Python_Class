@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>留言板</title>
+  <style>
+    body {
+      font-family: 微軟正黑體, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .talks {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      width: 600px; /* Adjust width as needed */
+      padding: 20px;
+      overflow-y: auto;
+      max-height: 500px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .List {
+      cursor: pointer;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+      font-size: 20px;
+      line-height: 1.5; /* Adjust line height for better spacing */
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .List:hover {
+      background-color: #eee;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 15px;
+      color: #666;
+    }
+
+    /* Custom scrollbar styling (optional) */
+    ::-webkit-scrollbar {
+      width: 10px;
+      background-color: #f5f5f5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="talks">
+    <h1>留言板</h1>
+    <ul>
+      {% for x in talks %}
+        <li class="List" style="font-size: 20px;" onclick="window.location = 'talk/{{ x.id }}'">{{ x.topic }}</li>
+        <p style="font-size: 15px;">摘要 (Summary): {{x.Talk|truncatechars:10}}</p>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
